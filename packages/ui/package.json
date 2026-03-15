@@ -24,7 +24,8 @@
       "types": "./dist/index.d.ts",
       "svelte": "./dist/index.js"
     },
-    "./styles": "./src/app.css"
+    "./styles": "./src/app.css",
+    "./swiper": "./src/lib/components/swiper/index.js"
   },
   "peerDependencies": {
     "svelte": "^5.0.0"
@@ -51,6 +52,7 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "swiper": "^12.1.2",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.1"
   }
