@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "svelte-intersection-observer": "^1.1.1",
     "swiper": "^12.1.2",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.1"

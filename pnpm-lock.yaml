@@ -75,6 +75,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      svelte-intersection-observer:
+        specifier: ^1.1.1
+        version: 1.1.1
       tailwind-merge:
         specifier: ^3.5.0
         version: 3.5.0
@@ -174,6 +177,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      svelte-intersection-observer:
+        specifier: ^1.1.1
+        version: 1.1.1
       swiper:
         specifier: ^12.1.2
         version: 12.1.2
@@ -1601,6 +1607,9 @@ packages:
     peerDependenciesMeta:
       svelte:
         optional: true
+
+  svelte-intersection-observer@1.1.1:
+    resolution: {integrity: sha512-T5Jkj5pkwhZcDIOQZh0tayAOnzJWRsE8Op667kAHlxLXV7TTsqLfkx1mkLLtPGMckpXQLLsrChHHnIb9HqvNzQ==}
 
   svelte2tsx@0.7.42:
     resolution: {integrity: sha512-PSNrKS16aVdAajoFjpF5M0t6TA7ha7GcKbBajD9RG3M+vooAuvLnWAGUSC6eJL4zEOVbOWKtcS2BuY4rxPljoA==}
@@ -3035,6 +3044,8 @@ snapshots:
       postcss-scss: 4.0.9(postcss@8.5.3)
     optionalDependencies:
       svelte: 5.46.0
+
+  svelte-intersection-observer@1.1.1: {}
 
   svelte2tsx@0.7.42(svelte@5.46.0)(typescript@5.9.2):
     dependencies:
