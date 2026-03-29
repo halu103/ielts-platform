@@ -1,2 +1,2 @@
-export { default as SwiperCard } from './lib/components/swiper/Card.svelte';
-export * from './lib/components/ui/button';
+export * as Button from './lib/components/ui/button';
+export * as Skeleton from './lib/components/ui/skeleton';

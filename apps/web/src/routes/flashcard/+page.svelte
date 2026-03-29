@@ -1,35 +1,16 @@
 <script lang="ts">
-  import {  SwiperCard } from '@repo/ui';
-	import { onMount } from 'svelte';
-
-  let curPage = $state(1);
-  let flashcards = $state<any[]>([]);
-  let hasMore = $state(true);
-  let isLoading = $state(false);
-
-  const fetchData = async () => {
-    if (isLoading || !hasMore) return;
-    isLoading = true;
-    try {
-      const res = await fetch(`/api/flashcard?page=${curPage}`);
-      if (res.ok) {
-        const { items, hasMore: more } = await res.json();
-        flashcards = [...flashcards, ...items];
-        hasMore = more;
-        curPage++;
-      }
-    } catch (error) {
-      console.log(error);
-    } finally {
-      isLoading = false;
-    }
-  };
-
- onMount(() => {
-   fetchData();
- })
+	import SwiperCard from './_components/SwiperCard.svelte';
+	import { getFlashCards } from './flashcard.remote';
+	import { paginatedResource } from '$lib/resource/paginatedResource.svelte';
+	import { Button } from '@repo/ui';
+	const flashCardsResource = paginatedResource((page) => getFlashCards(page));
 </script>
 
-<div class="min-h-screen w-full flex justify-center items-center">
-  <SwiperCard cards={flashcards} onLoadMore={fetchData} />
+<div class="flex min-h-screen w-full items-center justify-center">
+	<SwiperCard
+		cards={flashCardsResource.items}
+		onLoadMore={() => flashCardsResource.loadMore()}
+		isLoading={flashCardsResource.loading}
+	/>
 </div>
+<Button.Button onclick={() => flashCardsResource.refresh()}>Refresh</Button.Button>
